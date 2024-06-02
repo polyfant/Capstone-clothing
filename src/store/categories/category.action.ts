@@ -8,6 +8,7 @@ import {
 
 export type fetchCategoriesStart =
   Action<CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START>;
+
 export type fetchCategoriesSuccess = ActionWithPayload<
   CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_SUCCESS,
   Category[]
