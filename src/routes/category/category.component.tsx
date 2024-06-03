@@ -9,8 +9,14 @@ import { selectCategoriesIsLoading } from '../../store/categories/category.selec
 import { CategoryContainer, Title } from './category.styles';
 import Spinner from '../../components/spinner/spinner.component';
 
+type CategoryRouteParams = {
+  category: string;
+};
+
 const Category = () => {
-  const { category } = useParams();
+  const { category } = useParams<
+    keyof CategoryRouteParams
+  >() as CategoryRouteParams;
   console.log('render/re-rendering category component');
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
